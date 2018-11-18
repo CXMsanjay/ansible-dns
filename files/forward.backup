@@ -7,4 +7,4 @@ $TTL 1D
 					3H )	; minimum
 		IN	NS	example.com.
 example.com.	IN	A	
-server		IN	A	192.168.2.10
+client1		IN	A	192.168.2.10
