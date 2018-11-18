@@ -1,0 +1,11 @@
+$TTL 1D
+@	IN SOA	@ rname.invalid. (
+					0	; serial
+					1D	; refresh
+					1H	; retry
+					1W	; expire
+					3H )	; minimum
+	IN	NS	server.example.com.
+server	IN	A	 192.168.43.67
+client1	IN	A	
+client2	IN	A	

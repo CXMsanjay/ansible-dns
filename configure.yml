@@ -1,0 +1,32 @@
+- hosts: server
+  tasks:
+    - name: Install Package
+      yum:
+        name: bind
+        state: latest
+
+    - name: Configure named.conf
+      copy:
+        src: files/named.conf
+        dest: /etc/named.conf
+
+    - name: Configure zones
+      copy:
+        src: files/named.rfc1912.zones.backup
+        dest: /etc/named.rfc1912.zones
+
+
+    - name: Configure forward zone
+      copy:
+        src: files/forward
+        dest: /var/named/forward
+                     
+    - name: Configure resolv.conf
+      copy:
+        src: files/resolv.conf
+        dest: /etc/resolv.conf
+
+    - name: Service Start
+      service:
+        name: named
+        state: restarted                                    
